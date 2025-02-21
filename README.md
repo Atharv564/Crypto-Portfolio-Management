@@ -35,7 +35,6 @@ python manage.py runserver
 * **API:** CoinGecko / CoinMarketCap  
 
 ## 🔧 Configuration  
-----------------
 
 1. Create a `.env` file in the project root and add your API key:  
 
