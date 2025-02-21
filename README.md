@@ -42,3 +42,4 @@ python manage.py runserver
 ```env
    url = "https://api.coingecko.com/api/v3/coins/markets"
 ```
+2. Get a free API key from CoinGecko or CoinMarketCap.
