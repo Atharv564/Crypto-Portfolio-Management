@@ -9,7 +9,8 @@ from .models import Portfolio
 from .forms import PortfolioForm, SignupForm  # Ensure both forms are imported
 import logging
 
-
+def home(request):
+    return render(request, 'market/home.html')
 
 logger = logging.getLogger(__name__)
 
@@ -131,6 +132,7 @@ def logout_view(request):
     return redirect('login')
 
 # Edit Portfolio
+@login_required
 def edit_portfolio(request, portfolio_id):
     portfolio = get_object_or_404(Portfolio, id=portfolio_id)
     if request.method == "POST":
@@ -145,6 +147,7 @@ def edit_portfolio(request, portfolio_id):
 
 
 # Delete Portfolio
+@login_required
 def delete_portfolio(request, portfolio_id):
     portfolio_item = get_object_or_404(Portfolio, id=portfolio_id, user=request.user)
     portfolio_item.delete()
